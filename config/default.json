@@ -1,1 +1,2 @@
-{"mongoURI": "mongodb+srv://belccarvalho:Password123@learning1.jux3f.mongodb.net/mongoose?retryWrites=true&w=majority"}
+{"mongoURI": "mongodb+srv://belccarvalho:Password123@learning1.jux3f.mongodb.net/social-network-app?retryWrites=true&w=majority", 
+"jwtSecret": "mySecretToken"}
