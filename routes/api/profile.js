@@ -81,12 +81,23 @@ router.post(
     if (linkedin) profileFields.linkedin = linkedin;
     if (instagram) profileFields.instagram = instagram;
     try {
-      //Mongoose methods return Promises → async await necessary
+      //Mongoose methods return Promises → async await is necessary
       let profile = await Profile.findOne({ user: req.user.id });
-      // if(profile){
-      //     //Update
-      //     profile = await Profile.findByIdAndUpdate({user: req.user.id}, {$set: profileFields}, {new: true})
-      // }
+      if (profile) {
+        //Update
+        profile = await Profile.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: profileFields },
+          { new: true }
+        );
+
+        return res.json(profile);
+      }
+
+      //Create a profile, once it still does not exists
+      profile = new Profile(profileFields);
+      await profile.save();
+      res.json(profile);
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
