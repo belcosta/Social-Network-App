@@ -1,2 +1,4 @@
 {"mongoURI": "mongodb+srv://belccarvalho:Password123@learning1.jux3f.mongodb.net/social-network-app?retryWrites=true&w=majority", 
-"jwtSecret": "mySecretToken"}
+"jwtSecret": "mySecretToken", 
+"githubClientId": "df83c73d1628d8275683", 
+"githubSecret": "d88f56cf00b9294588b7f3bd6d21cfce75477261"}

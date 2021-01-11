@@ -8,4 +8,5 @@ const UserSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
 });
 
+//User is the name of the collection which will store all added users
 module.exports = User = mongoose.model("user", UserSchema);
