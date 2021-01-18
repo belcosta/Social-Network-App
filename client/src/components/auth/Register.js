@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
-export default function Register() {
+import { setAlert } from "../../actions/alert";
+import PropTypes from "prop-types";
+const Register = ({ setAlert }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +19,7 @@ export default function Register() {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Password not match");
+      setAlert("Password do not match", "danger");
     } else {
       console.log("Success");
     }
@@ -80,4 +82,10 @@ export default function Register() {
       </p>
     </Fragment>
   );
-}
+};
+
+Register.propTypes = {
+  setAlert: PropTypes.func.isRequired,
+};
+//whenever an action is used, it has to be passed in connect. The arguments are: 1) State I want to map. 2) actions
+export default connect(null, { setAlert })(Register);
