@@ -1,7 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import ProtoTypes from "prop-types";
+import { login } from "../../actions/auth";
 
-export default function Login() {
+const Login = ({ login }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,11 +17,10 @@ export default function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("Success");
+    login(email, password);
   };
   return (
     <Fragment>
-      <div className='alert alert-danger'>Invalid credentials</div>
       <h1 className='large text-primary'>Sign In</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Sign into Your Account
@@ -51,4 +53,9 @@ export default function Login() {
       </p>
     </Fragment>
   );
-}
+};
+
+Login.ProtoTypes = {
+  login: ProtoTypes.func.isRequired,
+};
+export default connect(null, { login })(Login);
