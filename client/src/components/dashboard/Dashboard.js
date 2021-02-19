@@ -6,7 +6,7 @@ import Spinner from "../layout/Spinner";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
-import { getCurrentProfile } from "../../actions/profile";
+import { deleteAccount, getCurrentProfile } from "../../actions/profile";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -30,6 +30,11 @@ const Dashboard = ({
           <DashboardActions />
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
+          <div className='my-2'>
+            <button className='btn btn-danger' onClick={deleteAccount()}>
+              <i className='fas fa-user-min'></i>Delete My Account
+            </button>
+          </div>
         </Fragment>
       ) : (
         <Fragment>
@@ -45,6 +50,7 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
+  deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
 };
@@ -54,4 +60,6 @@ const MapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(MapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(MapStateToProps, { getCurrentProfile, deleteAccount })(
+  Dashboard
+);
