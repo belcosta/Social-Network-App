@@ -50,7 +50,7 @@ export const getProfiles = () => async (dispatch) => {
   }
 };
 
-//get all profiles
+//get all profile by Id
 export const getProfileById = (userId) => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
   try {
