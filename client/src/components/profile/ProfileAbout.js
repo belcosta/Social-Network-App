@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-const ProfileAbout = ({profile: bio, skills, user: {name}}) => 
+const ProfileAbout = ({profile: {bio, skills, user: {name}}}) => 
 <div className="profile-about bg-light p-2">
     { bio && (
         <Fragment>
@@ -11,7 +11,7 @@ const ProfileAbout = ({profile: bio, skills, user: {name}}) =>
         </Fragment>
     )}
     <h2 className="text-primary">Skill</h2>
-    <div class="skills">
+    <div className="skills">
         {skills.map((skill, index)=> (
             <div key={index} className="p-1">
                 <i className="fas fa-check"/>{skill}

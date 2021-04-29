@@ -38,12 +38,12 @@ export const getProfiles = () => async (dispatch) => {
       type: GET_PROFILES,
       payload: res.data,
     });
-  } catch (error) {
+  } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: err.response.statusText,
+        status: err.response.status,
       },
     });
   }
@@ -57,12 +57,12 @@ export const getProfileById = (userId) => async (dispatch) => {
       type: GET_PROFILE,
       payload: res.data,
     });
-  } catch (error) {
+  } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response.statusText,
-        status: error.response.status,
+        msg: err.response.statusText,
+        status: err.response.status,
       },
     });
   }
@@ -245,8 +245,10 @@ export const deleteAccount = () => async (dispatch) => {
   if (window.confirm("Are you sure? This can NOT be undone!")) {
     try {
       await axios.delete(`api/profile`);
+      
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
+
       dispatch(setAlert("Your account has been permanently deleted"));
     } catch (error) {
       dispatch({

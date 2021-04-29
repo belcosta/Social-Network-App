@@ -11,11 +11,11 @@ const Profile = ({
   getProfileById,
   profile: { profile, loading },
   auth,
-  match,
+  match
 }) => {
   useEffect(() => {
     getProfileById(match.params.id);
-  }, [getProfileById]);
+  }, [getProfileById]); 
 
   return (
     <Fragment>
