@@ -19,7 +19,6 @@ export const getCurrentProfile = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (error) {
-    console.log(error),
     dispatch({
       type: PROFILE_ERROR,
       payload: {
@@ -52,7 +51,6 @@ export const getProfiles = () => async (dispatch) => {
 
 //get all profile by Id
 export const getProfileById = (userId) => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
     dispatch({
@@ -63,7 +61,7 @@ export const getProfileById = (userId) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: {
-        msg: error.response,
+        msg: error.response.statusText,
         status: error.response.status,
       },
     });
@@ -71,8 +69,7 @@ export const getProfileById = (userId) => async (dispatch) => {
 };
 
 //get github repos
-export const getGihubRepos = (username) => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
+export const getGithubRepos = (username) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
     dispatch({
