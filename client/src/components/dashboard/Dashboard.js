@@ -20,9 +20,9 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Dashboard</h1>
-      <p className='lead'>
-        <i className='fas fa-user'>Welcome{user && user.name}</i>
+      <h1 className="large text-primary">Dashboard</h1>
+      <p className="lead">
+        <i className="fas fa-user">Welcome {user && user.name}</i>
         {/* the "&&" means: if user exists, than show the username */}
       </p>
       {profile !== null ? (
@@ -30,16 +30,16 @@ const Dashboard = ({
           <DashboardActions />
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
-          <div className='my-2'>
-            <button className='btn btn-danger' onClick={deleteAccount()}>
-              <i className='fas fa-user-min'></i>Delete My Account
+          <div className="my-2">
+            <button className="btn btn-danger" onClick={deleteAccount()}>
+              <i className="fas fa-user-min"></i>Delete My Account
             </button>
           </div>
         </Fragment>
       ) : (
         <Fragment>
           <p>You have not yet setup a profile, please add some info</p>
-          <Link to='/create-profile' className='btn btn-primary my-1'>
+          <Link to="/create-profile" className="btn btn-primary my-1">
             Create Profile
           </Link>
         </Fragment>
