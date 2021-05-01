@@ -16,7 +16,7 @@ const PostItem = ({
   <div className="post bg-white p-1 my-1">
     <div>
       <Link to={`/profile/${user}`}>
-        <img class="round-img" src={avatar} alt="" />
+        <img className="round-img" src={avatar} alt="" />
         <h4>{name}</h4>
       </Link>
     </div>
@@ -48,7 +48,7 @@ const PostItem = ({
           <Link to={`posts/${_id}`} className="btn btn-primary">
             Discussion{" "}
             {comments.length > 0 && (
-              <span class="comment-count">{comments.length}</span>
+              <span className="comment-count">{comments.length}</span>
             )}
           </Link>
           {!auth.loading && user === auth.user._id && (
