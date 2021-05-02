@@ -4,10 +4,10 @@ That is the result of the [course](https://www.udemy.com/course/mern-stack-front
 
 #### What I have learned:
 
-- [ ] Build a full stack social network app with React, Redux, Node, Express & MongoDB
-- [ ] Create an extensive backend API with Express
-- [ ] Use Stateless JWT authentication practices
-- [ ] Integrate React with an Express backend in an elegant way
-- [ ] React Hooks, Async/Await & modern practices
-- [ ] Use Redux for state management
-- [ ] Deploy to Heroku with a postbuild script
+- [x] Build a full stack social network app with React, Redux, Node, Express & MongoDB
+- [x] Create an extensive backend API with Express
+- [x] Use Stateless JWT authentication practices
+- [x] Integrate React with an Express backend in an elegant way
+- [x] React Hooks, Async/Await & modern practices
+- [x] Use Redux for state management
+- [x] Deploy to Heroku with a postbuild script
