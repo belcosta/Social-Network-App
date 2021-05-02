@@ -11,3 +11,5 @@ That is the result of the [course](https://www.udemy.com/course/mern-stack-front
 - [x] React Hooks, Async/Await & modern practices
 - [x] Use Redux for state management
 - [x] Deploy to Heroku with a postbuild script
+
+I am debugging some functionalities...
