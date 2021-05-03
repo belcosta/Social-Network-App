@@ -1,6 +1,6 @@
 ## MERN Stack Front To Back: Full Stack React, Redux & Node.js
 
-That is the result of the [course](https://www.udemy.com/course/mern-stack-front-to-back/) from Udemy.
+That is the result of the [tutorial](https://www.udemy.com/course/mern-stack-front-to-back/) from Udemy.
 
 #### What I have learned:
 
